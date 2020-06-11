@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WordToPdf</title>
+    </head>
+    <body>
+        <form id="form" action="upload" method="POST" enctype="multipart/form-data">
+            <h1>Upload docx file here</h1>
+            <input type="file" name="upfile" value="">
+            <input type="submit">
+        </form>
+        
+        <form action="download" method="GET">
+            <button id="downloadButton" onclick="submit">Download PDF</button>
+        </form>
+
+        <form action="/email" method="post" enctype="multipart/form-data">
+            Email:<input type="email" name="toEmail">
+            <input id="emailButton" type="submit">
+        </form>
+
+        <script>
+            document.getElementById("form").addEventListener("submit", () => {
+                document.getElementById("downloadButton").style.background="blue"
+                document.getElementById("emailButton").style.background="blue"
+            })
+        </script>
+    </body>
+</html>
